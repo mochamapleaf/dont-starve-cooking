@@ -1,0 +1,421 @@
+#meats
+meat:
+  tags:
+    meat: 1
+  derivative:
+    cooked: null
+    dried: null
+    
+monstermeat:
+  tags:
+    meat: 1
+    monster: 1
+  derivative:
+    cooked: null
+    dried: null
+
+froglegs: &froglegs
+  tags:
+    meat: 0.5
+  derivative:
+    cooked: null
+
+drumstick:
+  <<: *froglegs
+batwing:
+  <<: *froglegs
+
+smallmeat: &smallmeat
+  tags:
+    meat: 0.5
+  derivative:
+    cooked: null
+    dried: null
+
+batnose:
+  <<: *smallmeat
+
+plantmeat: &plantmeat
+  tags:
+    meat: 1
+  
+plantmeat_cooked:
+  <<: *plantmeat
+
+mole:
+  tags:
+    meat: 0.5
+    
+#fishes
+eel:
+  tags:
+    meat: 0.5
+    fish: 1
+  derivative:
+    cooked: null
+
+fish:
+  tags:
+    meat: 1
+    fish: 1
+  derivative:
+    cooked: null
+
+pondeel:
+  tags:
+    meat: 0.5
+    fish: 1
+  derivative:
+    cooked: null
+
+pondfish:
+  tags:
+    meat: 0.5
+    fish: 0.5
+
+fishmeat_small:
+  tags:
+    meat: 0.5
+    fish: 0.5
+  derivative:
+    cooked: null
+
+fishmeat:
+  tags:
+    meat: 1
+    fish: 1
+  derivative:
+    cooked: null
+
+barnacle: &barnacle
+  tags:
+    meat: 0.25
+    fish: 0.25
+
+barnacle_cooked:
+  <<: *barnacle
+
+wobster_sheller_land:
+  tags:
+    meat: 1
+    fish: 1
+
+
+#veggies 
+carrot: &veggies
+  tags:
+    veggie: 1
+  derivative:
+    cooked: null
+
+corn:
+  <<: *veggies
+pumpkin:
+  <<: *veggies
+eggplant:
+  <<: *veggies
+cutlichen:
+  <<: *veggies
+asparagus:
+  <<: *veggies
+onion:
+  <<: *veggies
+garlic:
+  <<: *veggies
+tomato:
+  <<: *veggies
+potato:
+  <<: *veggies
+pepper:
+  <<: *veggies
+
+kelp:
+  tags:
+    veggie: 0.5
+  derivative:
+    cooked: null
+    dried: null
+
+mandrake:
+  tags:
+    veggie: 1
+    magic: 1
+  derivative:
+    cooked: null
+
+cactus_meat:
+  <<: *veggies
+
+cactus_flower:
+  tags:
+    veggie: 0.5
+
+rock_avocado_fruit_ripe:
+  <<: *veggies
+
+acorn_cooked:
+  tags:
+    seed: 1
+
+#mushrooms
+red_cap: &mushrooms
+  tags:
+    veggie: 0.5
+  derivative:
+    cooked: null
+
+green_cap:
+  <<: *mushrooms
+blue_cap:
+  <<: *mushrooms
+moon_cap:
+  <<: *mushrooms
+
+#fruits
+pomegranate: &fruits
+  tags:
+    fruit: 1
+  derivative:
+    cooked: null
+
+dragonfruit:
+  <<: *fruits
+
+cave_banana:
+  <<: *fruits
+
+wormlight:
+  tags:
+    fruit: 1
+
+wormlight_lesser:
+  tags:
+    fruit: 0.5
+
+berries: &berries
+  tags:
+    fruit: 0.5
+  derivative:
+    cooked: null
+
+berries_juicy:
+  <<: *berries
+
+durian:
+  tags:
+    fruit: 1
+    monster: 1
+  derivative:
+    cooked: null
+    
+watermelon:
+  <<: *fruits
+
+#sweeteners
+honey: &honey
+  tags:
+    sweetener: 1
+  derivative:
+    cooked: null
+
+honeycomb:
+  <<: *honey
+
+royal_jelly:
+  tags:
+    sweetener: 3
+  derivative:
+    cooked: null
+
+#eggs
+egg: &egg
+  tags:
+    egg: 1
+  derivative:
+    cooked: null
+
+tallbirdegg:
+  tags:
+    egg: 1
+  derivative:
+    cooked: null
+
+bird_egg:
+  <<: *egg
+
+#dairy
+butter:
+  tags:
+    fat: 1
+    dairy: 1
+
+goatmilk:
+  tags:
+    dairy: 1
+
+#frozen
+ice:
+  tags:
+    frozen: 1
+
+#decorations
+butterflywings: &butterflywings
+  tags:
+    decoration: 2
+
+moonbutterflywings:
+  <<: *butterflywings
+
+refined_dust:
+  <<: *butterflywings
+
+forgetmelots:
+  tags:
+    decoration: 1
+
+#inedible
+twigs:
+  tags:
+    inedible: 1
+
+nightmarefuel:
+  tags:
+    inedible: 1
+    magic: 1
+
+boneshard:
+  tags:
+    inedible: 1
+
+lightninggoathorn:
+  tags:
+    inedible: 1
+
+# #ocean fish
+# oceanfish_small_1_env:
+#   tags: &ingSmall
+#     meat: 0.5
+#     fish: 0.5
+#   derivative:
+#     cooked: "fishmeat_small_cooked"
+#     loot: "fishmeat_small"
+#     perished: "fishmeat_small"
+
+# oceanfish_small_2_env:
+#   *ingSmall
+#   derivative:
+#     cooked: "fishmeat_small_cooked"
+#     loot: "fishmeat_small"
+#     perished: "fishmeat_small"
+
+# oceanfish_small_3_env:
+#   *ingSmall
+#   derivative:
+#     cooked: "fishmeat_small_cooked"
+#     loot: "fishmeat_small"
+#     perished: "fishmeat_small"
+    
+# oceanfish_small_4_env:
+#   *ingSmall
+#   derivative:
+#     cooked: "fishmeat_small_cooked"
+#     loot: "fishmeat_small"
+#     perished: "fishmeat_small"
+
+# oceanfish_small_5_env:
+#   tags:
+#     veggie: 1
+#   derivative:
+#     cooked: "corn_cooked"
+#     loot: "corn_cooked"
+#     perished: "corn_cooked"
+    
+# oceanfish_small_6_env: #autumn
+#   *ingSmall
+#   derivative:
+#     cooked: "plantmeat_cooked"
+#     loot: "plantmeat"
+#     perished: "spoiled_food"
+    
+# oceanfish_small_7_env: #spring
+#   *ingSmall
+#   derivative:
+#     cooked: "plantmeat_cooked"
+#     loot: "plantmeat"
+#     perished: "spoiled_food"
+
+# oceanfish_small_8_env: #summer
+#   *ingSmall
+#   derivative:
+#     cooked: "fishmeat_small_cooked"
+#     loot: "fishmeat_small_cooked"
+#     perished: "fishmeat_small"
+    
+# oceanfish_small_9_env: #sprinkler
+#   *ingSmall
+#   derivative:
+#     cooked: "fishmeat_small_cooked"
+#     loot: "fishmeat_small"
+#     perished: "fishmeat_small"
+   
+# oceanfish_medium_1_env:
+#   tags: &ingMedium
+#     meat: 1
+#     fish: 1
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: "fishmeat"
+#     perished: "fishmeat"
+
+# oceanfish_medium_2_env:
+#   *ingMedium
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: "fishmeat"
+#     perished: "fishmeat"
+    
+# oceanfish_medium_3_env:
+#   *ingMedium
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: "fishmeat"
+#     perished: "fishmeat"
+    
+# oceanfish_medium_4_env:
+#   *ingMedium
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: "fishmeat"
+#     perished: "fishmeat"
+    
+# oceanfish_medium_5_env:
+#   tags:
+#     veggie: 1
+#   derivative:
+#     cooked: "corn_cooked"
+#     loot: "corn"
+#     perished: "corn"
+    
+# oceanfish_medium_6_env:
+#   *ingMedium
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: "fishmeat"
+#     perished: "fishmeat"
+    
+# oceanfish_medium_7_env:
+#   *ingMedium
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: "fishmeat"
+#     perished: "fishmeat"
+    
+# oceanfish_medium_8_env:
+#   tags:
+#     meat: 1
+#     fish: 1
+#     frozen: 1
+#   derivative:
+#     cooked: "fishmeat_cooked"
+#     loot: ["fishmeat","ice","ice"]
+#     perished: "fishmeat"

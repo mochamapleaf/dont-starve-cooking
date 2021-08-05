@@ -1,0 +1,224 @@
+frogglebunwich:
+  requirement:
+    needName:
+      - {froglegs: null, froglegs_cooked: null}
+    needTag:
+      veggie: 0.5 #>=0.5
+  priority: 1
+
+stuffedeggplant:
+  requirement:
+    needName:
+      - {eggplant: null, eggplant_cooked: null}
+    needTag:
+      veggie: 1.05 #>1
+  priority: 1
+
+fishsticks:
+  requirement:
+    needName:
+      - {twigs: null}
+    needTag:
+      fish: 0.05
+      inedible: 0.05
+    max:
+      inedible: 1 #<=1
+  priority: 10
+
+meatballs:
+  requirement:
+    needTag:
+      meat: 0.05
+    exclude:
+      inedible: null
+  priority: -1
+
+butterflymuffin:
+  requirement:
+    needName:
+      - {butterflywings: null, moonbutterflywings: null}
+    needTag:
+      veggie: 0.5
+    exclude:
+      meat: null
+  priority: 1
+
+taffy:
+  requirement:
+    needTag:
+      sweetener: 3
+    exclude:
+      meat: null
+  priority: 10
+
+pumpkincookie:
+  requirement:
+    needName:
+      - {pumpkin: null, pumpkin_cooked: null}
+    needTag:
+      sweetener: 2
+  priority: 10
+
+honeynuggets:
+  requirement:
+    needName:
+      - {honey: null}
+    needTag:
+      meat: 0.05
+    max:
+      meat: 1.5
+    exclude:
+      inedible: null
+  priority: 2
+
+honeyham:
+  requirement:
+    needName:
+      - {honey: null}
+    needTag:
+      meat: 1.55
+    exclude:
+      inedible: null
+  priority: 2
+
+dragonpie:
+  requirement:
+    needName:
+      - {dragonfruit: null, dragonfruit_cooked: null}
+    exclude:
+      meat: null
+  priority: 1
+
+kabobs:
+  requirement:
+    needName:
+      - {twigs: null}
+    needTag:
+      meat: 0.05
+      inedible: 0.05
+    max:
+      monster: 1
+  priority: 5
+
+mandrakesoup:
+  requirement:
+    needName:
+      mandrake: 1
+  priority: 10
+
+baconeggs:
+  requirement:
+    needTag:
+      egg: 1.05
+      meat: 1.05
+    exclude:
+      veggie: null
+  priority: 10
+
+bonestew:
+  requirement:
+    needTag:
+      meat: 3
+    exclude:
+      inedible: null
+  priority: 0
+
+perogies:
+  requirement:
+    needTag:
+      egg: 0.05
+      meat: 0.05
+      veggie: 0.5
+    exclude:
+      inedible: null
+  priority: 5
+
+turkeydinner:
+  requirement:
+    needName:
+      drumstick: 2
+    needTag:
+      meat: 1.05
+      veggie: 0.5 #or fruit: 0.05
+  priority: 10
+
+ratatouille:
+  requirement:
+    needTag:
+      veggie: 0.5
+    exclude:
+      meat: null
+      inedible: null
+  priority: 0
+
+jammypreserves:
+  requirement:
+    needTag:
+      fruit: 0.05
+    exclude:
+      meat: null
+      veggie: null
+      inedible: null
+  priority: 0
+
+fruitmedley:
+  requirement:
+    needTag:
+      fruit: 3
+    exclude:
+      meat: null
+      veggie: null
+  priority: 0
+
+fishtacos:
+  requirement:
+    needName:
+      - {corn: null, corn_cooked: null, oceanfish_small_5_inv: null, oceanfish_medium_5_inv: null}
+    needTag:
+      fish: 0.05
+  priority: 10
+
+waffles:
+  requirement:
+    needName:
+      - {butter: null}
+      - {berries: null, berries_cooked: null, berries_juicy: null, berries_juicy_cooked: null}
+    needTag:
+      egg: 0.05
+  priority: 10
+
+monsterlasagna:
+  requirement:
+    needTag:
+      monster: 2
+    exclude:
+      inedible: null
+  priority: 10
+
+powcake:
+  requirement:
+    needName:
+      - {twigs: null}
+      - {honey: null}
+      - {corn: null, corn_cooked: null, oceanfish_small_5_inv: null, oceanfish_medium_5_inv: null}
+  priority: 10
+  
+unagi:
+  requirement:
+    needName:
+      - {cutlichen: null, kelp: null, kelp_cooked: null, kelp_dried: null}
+      - {eel: null, eel_cooked: null, pondeel: null}
+  priority: 20
+
+wetgoop: #fallback
+  requirement: null
+  priority: -2
+
+flowersalad:
+  requirement:
+    needName:
+      - {cactus_flower: null}
+    needTag:
+      
+  
+

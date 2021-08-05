@@ -1,0 +1,17 @@
+nightmarepie: #direct recipe - only have one set of ingredients
+  requirement:
+    needName:
+      nightmarefuel: 2
+      potato: 1 #potato, potato_cooked
+      onion: 1 #onion, onion_cooked
+  priority: 30
+
+voltgoatjelly:
+  requirement:
+    needName:
+      lightninggoathorn: 1
+    needTag:
+      sweetener: 2
+    exclude:
+      meat: null
+  priority: 30
