@@ -219,6 +219,309 @@ flowersalad:
     needName:
       - {cactus_flower: null}
     needTag:
-      
-  
+      veggie: 2
+    exclude:
+      inedible: null
+      egg: null
+      meat: null
+      sweetener: null
+      fruit: null
+  priority: 10
 
+icecream:
+  requirement:
+    needTag:
+      frozen: 0.05
+      dairy: 0.05
+      sweetener: 0.05
+    exclude:
+      meat: null
+      veggie: null
+      inedible: null
+      egg: null
+  priority: 10
+
+watermelonicle:
+  requirement:
+    needName:
+      - {watermelon: null}
+      - {twigs: null}
+    needTag:
+      frozen: 0.05
+    exclude:
+      meat: null
+      veggie: null
+      egg: null
+  priority: 10
+    
+trailmix:
+  requirement:
+    needName:
+      - {acorn_cooked: null}
+      - {berries: null, berries_cooked: null, berries_juicy: null, berries_juicy_cooked: null}
+    needTag:
+      seed: 1
+      fruit: 1
+    exclude:
+      meat: null
+      veggie: null
+      egg: null
+      dairy: null
+  priority: 10
+
+hotchili:
+  requirement:
+    needTag:
+      meat: 1.5
+      veggie: 0.05
+  priority: 10
+
+guacamole:
+  requirement:
+    needName:
+      - {mole: null}
+      - {rock_avocado_fruit_ripe: null, cactus_meat: null}
+    exclude:
+      fruit: null
+  priority: 10
+
+jellybean:
+  requirement:
+    needName:
+      - {royal_jelly: null}
+    exclude:
+      inedible: null
+      monster: null
+  priority: 12
+
+#new
+potatotornado:
+  requirement:
+    needName:
+      - {potato: null, potato_cooked: null}
+      - {twigs: null}
+    exclude:
+      meat: null
+    max:
+      monster: 1
+      inedible: 2
+  priority: 10
+
+mashedpotatoes: 
+  requirement:
+    needName:
+      - {potato: null, potato_cooked: null}
+      - {potato: null, potato_cooked: null}
+      - {garlic: null, garlic_cooked: null}
+    exclude:
+      meat: null
+      inedible: null
+  priority: 20
+
+asparagussoup:
+  requirement:
+    needName:
+      - {asparagus: null, asparagus_cooked: null}
+    exclude:
+      meat: null
+      inedible: null
+  priority: 10
+
+vegstinger:
+  requirement:
+    needName:
+      - {asparagus: null, asparagus_cooked: null, tomato: null, tomato_cooked: null}
+    needTag:
+      veggie: 2.05
+      frozen: 0.05
+    exclude:
+      meat: null
+      inedible: null
+      egg: null
+  priority: 15
+
+bananapop:
+  requirement:
+    needName:
+      - {cave_banana: null, cave_banana_cooked: null}
+      - {twigs: null}
+    needTag: #name有twig，不需要再写一遍
+      frozen: 0.05
+    exclude:
+      meat: null
+      fish: null
+    max:
+      inedible: 2
+  priority: 20
+
+ceviche:
+  requirement:
+    needTag:
+      fish: 2
+      frozen: 0.05
+    exclude:
+      inedible: null
+      egg: null
+  priority: 20
+
+salsa:
+  requirement:
+    needName:
+      - {tomato: null, tomato_cooked: null}
+      - {onion: null, onion_cooked: null}
+    exclude:
+      meat: null
+      inedible: null
+      egg: null
+  priority: 20
+
+pepperpopper:
+  requirement:
+    needName:
+      - {pepper: null, pepper_cooked: null}
+    needTag:
+      meat: 0.05
+    max:
+      meat: 1.5
+    exclude:
+      inedible: null
+  priority: 20
+
+californiaroll:
+  requirement:
+    needName:
+      - {kelp: null, kelp_cooked: null, kelp_dried: null}
+      - {kelp: null, kelp_cooked: null, kelp_dried: null}
+    needTag:
+      fish: 1
+  priority: 20
+  
+seafoodgumbo:
+  requirement:
+    needTag:
+      fish: 2.05
+  priority: 10
+
+surfnturf:
+  requirement:
+    needTag:
+      meat: 2.5
+      fish: 1.5
+    exclude:
+      frozen: null
+  priority: 30
+
+lobsterbisque:
+  requirement:
+    needName:
+      - {wobster_sheller_land: null}
+    needTag:
+      frozen: null
+  priority: 30
+
+lobsterdinner:
+  requirement:
+    needName:
+      - {tobster_sheller_land: null}
+      - {butter: null}
+    needTag:
+      meat: 1
+      fish: 1
+    exclude:
+      frozen: null
+  priority: 25
+
+barnaclepita:
+  requirement:
+    needName:
+      - {barnacle: null, barnacle_cooked: null}
+    needTag:
+      veggie: 0.5
+  priority: 25
+
+barnaclesushi:
+  requirement:
+    needName:
+      - {barnacle: null, barnacle_cooked: null}
+      - {kelp: null, kelp_cooked: null}
+    needTag:
+      egg: 1
+  priority: 30
+
+barnaclinguine:
+  requirement:
+    needName:
+      - {barnacle: null, barnacle_cooked: null}
+      - {barnacle: null, barnacle_cooked: null}
+    needTag:
+      veggie: 2
+  priority: 30
+
+barnaclestuffedfishhead:
+  requirement:
+    needName:
+      - {barnacle: null, barnacle_cooked: null}
+    needTag:
+      fish: 1.25
+  priority: 25
+
+leafloaf:
+  requirement:
+    needName:
+      - {plantmeat: null, plantmeat_cooked: null}
+      - {plantmeat: null, plantmeat_cooked: null}
+  priority: 25
+
+leafymeatburger:
+  requirement:
+    needName:
+      - {plantmeat: null, plantmeat_cooked: null}
+      - {onion: null, onion_cooked: null}
+    needTag:
+      veggie: 2
+  priority: 25
+
+leafymeatsouffle:
+  requirement:
+    needName:
+      - {plantmeat: null, plantmeat_cooked: null}
+      - {plantmeat: null, plantmeat_cooked: null}
+    needTag:
+      sweetener: 2
+  priority: 50
+#使用优先满足算法？优先尝试把条件全部满足
+
+meatysalad:
+  requirement:
+    needname:
+      - {plantmeat: null, plantmeat_cooked: null}
+    needTag:
+      veggie: 3
+  priority: 25
+
+shroomcake:
+  requirement:
+    needName:
+      - {moon_cap: null}
+      - {red_cap: null}
+      - {blue_cap: null}
+      - {green_cap: null}
+  priority: 30
+
+sweettea:
+  requirement:
+    needName:
+      - {forgetmelots: null}
+    needTag:
+      sweetener: 0.05
+      frozen: 0.05
+    exclude:
+      monster: null
+      veggie: null
+      meat: null
+      fish: null
+      egg: null
+      fat: null
+      dairy: null
+      inedible: null
+  priority: 1
