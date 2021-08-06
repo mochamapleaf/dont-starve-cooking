@@ -416,7 +416,7 @@ lobsterbisque:
     needName:
       - {wobster_sheller_land: null}
     needTag:
-      frozen: null
+      frozen: 0.05
   priority: 30
 
 lobsterdinner:
@@ -493,7 +493,7 @@ leafymeatsouffle:
 
 meatysalad:
   requirement:
-    needname:
+    needName:
       - {plantmeat: null, plantmeat_cooked: null}
     needTag:
       veggie: 3

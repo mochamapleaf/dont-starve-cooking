@@ -4,7 +4,7 @@ This is a project aimed to deliver a user-friendly cooking guide for Don't Starv
 
 ## Planned Main Features
 
-- [ ] simulate the cookpot in don't starve, output the recipe for a specific set of ingredients
+- [x] simulate the cookpot in don't starve, output the recipe for a specific set of ingredients
 - [ ] generate list of possible ingredient combinations for a specific recipe
 - [ ] generate list of possible recipes according to the ingredient added (ingredients <=3)
 - [ ] generate the best cooking path of a given group of ingredients according to the effect of each food and the derivatives of each food
