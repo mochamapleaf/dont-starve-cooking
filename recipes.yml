@@ -210,9 +210,9 @@ unagi:
       - {eel: null, eel_cooked: null, pondeel: null}
   priority: 20
 
-wetgoop: #fallback
-  requirement: null
-  priority: -2
+#wetgoop: #fallback
+#  requirement: null
+#  priority: -2
 
 flowersalad:
   requirement:

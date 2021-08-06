@@ -107,8 +107,7 @@ class ingredients:
                         break
             if dishFailed: continue
             return rName
-
-
+        return "wetgoop"
     def getPossibleRecipe(self, recipeClass):  # list all the possible recipes that could be made
         pass
 
@@ -129,5 +128,5 @@ class ErrIngredientsNumber(Exception):
 if __name__ == "__main__":
     classicFood = food("foods.yml")
     classicRecipe = recipe("recipes.yml")
-    myIng = ingredients(classicFood,['butter','berries','egg','ice'])
+    myIng = ingredients(classicFood,['berries','berries','berries','twigs'])
     print(myIng.getOnlyRecipe(classicRecipe))
