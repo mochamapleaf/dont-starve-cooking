@@ -103,7 +103,7 @@ kabobs:
 mandrakesoup:
   requirement:
     needName:
-      mandrake: 1
+      - {mandrake: null}
   priority: 10
 
 baconeggs:
@@ -136,7 +136,8 @@ perogies:
 turkeydinner:
   requirement:
     needName:
-      drumstick: 2
+      - {drumstick: null}
+      - {drumstick: null}
     needTag:
       meat: 1.05
       veggie: 0.5 #or fruit: 0.05
@@ -422,7 +423,7 @@ lobsterbisque:
 lobsterdinner:
   requirement:
     needName:
-      - {tobster_sheller_land: null}
+      - {wobster_sheller_land: null}
       - {butter: null}
     needTag:
       meat: 1
