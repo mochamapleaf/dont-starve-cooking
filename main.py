@@ -57,6 +57,7 @@ class ingredients:
     def addFood(self, foodName):
         if len(self.foodList) == 4: raise ErrIngredientsNumber
         foodObject = self.foodClass.getFood(foodName)
+        self.foodList.append(foodName)
         for tag in foodObject['tags']:
             self.tags[tag] = self.tags.setdefault(tag, 0) + foodObject['tags'][tag]
 
@@ -65,7 +66,11 @@ class ingredients:
         foodObject = self.foodClass.getFood(foodName)
         for tag in foodObject['tags']:
             self.tags[tag] -= foodObject['tags'][tag]
-
+            if self.tags[tag] == 0: self.tags.pop(tag)
+        for i in range(len(self.foodList)):
+            if self.foodList[i] == foodName:
+                self.foodList.pop(i)
+                break
     def getRecipe(self, recipeClass):
         pass
 
@@ -109,7 +114,47 @@ class ingredients:
             return rName
         return "wetgoop"
     def getPossibleRecipe(self, recipeClass):  # list all the possible recipes that could be made
-        pass
+        resultList = {}
+        for rName, recipe in recipeClass.recipes.items():
+            dishFailed = False
+            for tag in self.tags:
+                # first check if the dish explicitly excludes a tag
+                if ('exclude' in recipe['requirement']) and (tag in recipe['requirement']['exclude']):
+                    dishFailed = True
+                    break
+            if dishFailed: continue
+            if 'max' in recipe['requirement']:
+                for tag, tagMax in recipe['requirement']['max'].items():
+                    if (tag in self.tags) and self.tags[tag] >tagMax:
+                        dishFailed = True
+                        break
+            if dishFailed: continue
+            if 'needName' in recipe['requirement']: #still, better algorithm is needed
+                tempIng = self.foodList.copy()
+                newRequire = []
+                for need in recipe['requirement']['needName']:  # Needs a good algorithm here
+                    hasFood = False
+                    for i in range(len(tempIng)):
+                        if tempIng[i] in need:
+                            hasFood = True
+                            tempIng.pop(i)
+                            break
+                    if not hasFood: newRequire.append(need)
+                if len(newRequire) > 4-len(self.foodList):
+                    continue
+                elif len(newRequire) == 4-len(self.foodList):
+                    tempList = []
+                    for item in newRequire:
+                        tempList.append(list(item.keys())[0])
+                        self.addFood(list(item.keys())[0])
+                    if self.getOnlyRecipe(recipeClass) != rName:
+                        for item in tempList:
+                            self.removeFood(item)
+                        continue
+                    for item in tempList:
+                        self.removeFood(item)
+            resultList[rName] = len(self.foodList) - len(tempIng)
+        return resultList
 
 
 class ErrFoodNotExist(Exception):
@@ -128,5 +173,8 @@ class ErrIngredientsNumber(Exception):
 if __name__ == "__main__":
     classicFood = food("foods.yml")
     classicRecipe = recipe("recipes.yml")
-    myIng = ingredients(classicFood,['berries','berries','berries','twigs'])
+    myIng = ingredients(classicFood,['potato','potato','twigs'])
+    temp = myIng.getPossibleRecipe(classicRecipe)
+    print(sorted(temp,key=lambda item: temp[item],reverse=True))
+    print(temp)
     print(myIng.getOnlyRecipe(classicRecipe))
