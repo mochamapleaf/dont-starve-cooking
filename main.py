@@ -156,6 +156,21 @@ class ingredients:
             resultList[rName] = len(self.foodList) - len(tempIng)
         return resultList
 
+    def vertifyCandidate(self,recipeClass):
+        if len(self.foodList) == 4 or len(self.foodList) == 0: return
+        resultDict = {}
+        if len(self.foodList) == 3:
+            for ing in self.foodClass.foods:
+                self.addFood(ing)
+                temp = self.getOnlyRecipe(recipeClass)
+                if temp in resultDict:
+                    resultDict[temp].append(self.foodList.copy())
+                else:
+                    resultDict[temp] = [self.foodList.copy()]
+                self.removeFood(ing)
+        return resultDict
+
+
 
 class ErrFoodNotExist(Exception):
     def __init__(self, foodName):
@@ -173,8 +188,11 @@ class ErrIngredientsNumber(Exception):
 if __name__ == "__main__":
     classicFood = food("foods.yml")
     classicRecipe = recipe("recipes.yml")
-    myIng = ingredients(classicFood,['potato','potato','twigs'])
+    myIng = ingredients(classicFood,['potato','potato','garlic'])
     temp = myIng.getPossibleRecipe(classicRecipe)
-    print(sorted(temp,key=lambda item: temp[item],reverse=True))
-    print(temp)
-    print(myIng.getOnlyRecipe(classicRecipe))
+    temp2 = sorted(temp,key=lambda item: temp[item],reverse=True)
+    #print(temp)
+    #print(temp2)
+    temp3 = myIng.vertifyCandidate(classicRecipe)
+    print(sorted(temp3,key=lambda item: len(temp3[item])))
+    #print(myIng.getOnlyRecipe(classicRecipe))
