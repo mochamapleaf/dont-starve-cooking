@@ -1,23 +1,16 @@
 import yaml
-
+import time
 
 class recipe:
-    def __init__(self,docName, recipeNames = None):
-        doc = open(docName, 'r')
+    def __init__(self,docName):
+        doc = open(docName, 'r',encoding='utf8')
         temp = yaml.load(doc,Loader=yaml.FullLoader)
-        if not recipeNames is None:
-            subSet = {}
-            for i in recipeNames:
-                subSet[i] = temp[i]
-                self.sortedDict = sorted(subSet, key=lambda item: subSet[item]['priority'], reverse=True)
-                self.recipes = temp
-        else:
-            self.sortedDict = sorted(temp, key=lambda item: temp[item]['priority'],reverse=True)
-            self.recipes = temp
+        self.sortedDict = sorted(temp, key=lambda item: temp[item]['priority'],reverse=True)
+        self.recipes = temp
 
 class food:
     def __init__(self, docName):
-        doc = open(docName, 'r')
+        doc = open(docName, 'r',encoding='utf8')
         self.foods = yaml.load(doc, Loader=yaml.FullLoader)
 
     def getFood(self, foodName):
@@ -165,6 +158,7 @@ class ingredients:
 
     def vertifyCandidate(self,recipeClass):
         if len(self.foodList) == 4 or len(self.foodList) == 0: return
+        if len(self.foodList) == 1: return self.getPossibleRecipe(recipeClass)
         resultDict = {}
         if len(self.foodList) == 3:
             for ing in self.foodClass.foods:
@@ -175,6 +169,18 @@ class ingredients:
                 else:
                     resultDict[temp] = [self.foodList.copy()]
                 self.removeFood(ing)
+        else:
+            for ing1 in self.foodClass.foods:
+                self.addFood(ing1)
+                for ing2 in self.foodClass.foods:
+                    self.addFood(ing2)
+                    temp = self.getOnlyRecipe(recipeClass)
+                    if temp in resultDict:
+                        resultDict[temp].append(self.foodList.copy())
+                    else:
+                        resultDict[temp] = [self.foodList.copy()]
+                    self.removeFood(ing2)
+                self.removeFood(ing1)
         return resultDict
 
 
@@ -195,11 +201,10 @@ class ErrIngredientsNumber(Exception):
 if __name__ == "__main__":
     classicFood = food("foods.yml")
     classicRecipe = recipe("recipes.yml")
-    myIng = ingredients(classicFood,['potato','potato','garlic'])
-    temp = myIng.getPossibleRecipe(classicRecipe)
-    temp2 = sorted(temp,key=lambda item: temp[item],reverse=True)
+    myIng = ingredients(classicFood,['potato'])
     #print(temp)
     #print(temp2)
     temp3 = myIng.vertifyCandidate(classicRecipe)
-    print(sorted(temp3,key=lambda item: len(temp3[item])))
+    print(sorted(temp3, key=lambda item: temp3[item],reverse=True))
+    #print(sorted(temp3,key=lambda item: len(temp3[item])))
     #print(myIng.getOnlyRecipe(classicRecipe))
