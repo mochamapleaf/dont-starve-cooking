@@ -2,11 +2,18 @@ import yaml
 
 
 class recipe:
-    def __init__(self, docName):
+    def __init__(self,docName, recipeNames = None):
         doc = open(docName, 'r')
         temp = yaml.load(doc,Loader=yaml.FullLoader)
-        self.sortedDict = sorted(temp, key=lambda item: temp[item]['priority'],reverse=True)
-        self.recipes = temp
+        if not recipeNames is None:
+            subSet = {}
+            for i in recipeNames:
+                subSet[i] = temp[i]
+                self.sortedDict = sorted(subSet, key=lambda item: subSet[item]['priority'], reverse=True)
+                self.recipes = temp
+        else:
+            self.sortedDict = sorted(temp, key=lambda item: temp[item]['priority'],reverse=True)
+            self.recipes = temp
 
 class food:
     def __init__(self, docName):
