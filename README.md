@@ -1,4 +1,4 @@
-# dont_starve_cooking
+# dont-starve-cooking
 
 This is a project aimed to deliver a user-friendly cooking guide for Don't Starve players.
 
